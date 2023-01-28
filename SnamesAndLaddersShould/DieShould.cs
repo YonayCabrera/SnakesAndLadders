@@ -6,7 +6,7 @@ namespace SnamesAndLaddersShould
     public class DieShould
     {
         [Test]
-        public void dice_should_be_between_1_6()
+        public void Return_value_between_1_6()
         {
             var dieMinValue = 1;
             var dieMaxValue = 6;
