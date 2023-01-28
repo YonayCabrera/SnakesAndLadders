@@ -5,16 +5,17 @@ namespace SnamesAndLaddersShould
 {
     public class GameShould
     {
+        private Game game;
+
         [SetUp]
         public void Setup()
         {
+            game = new Game();
         }
 
         [Test]
         public void Start_when_the_token_is_on_square_1()
         {
-            var game = new Game();
-
             var expectedSquare = 1;
             game.GetTokenPosition().Should().Be(expectedSquare);
         }
@@ -22,8 +23,6 @@ namespace SnamesAndLaddersShould
         [Test]
         public void have_token_in_square_4_after_moving_3_spaces_from_square_1()
         {
-            var game = new Game();
-
             game.MoveToken(3);
 
             var expectedSquare = 4;
