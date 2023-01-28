@@ -8,10 +8,14 @@ namespace SnamesAndLaddersShould
     public class GameShould
     {
         private Game game;
+        private Player player;
+        private Die die;
 
         [SetUp]
         public void Setup()
         {
+            die = Substitute.For<Die>();
+            player = new Player(die);
             game = new Game();
         }
 
@@ -84,8 +88,6 @@ namespace SnamesAndLaddersShould
         [Test]
         public void Move_4_spaces_when_the_player_rolls_a_4()
         {
-            var die = Substitute.For<Die>();
-            var player = new Player(die);
             die.Roll().Returns(4);
             var valueOfDie = player.RollADie();
 
