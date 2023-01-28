@@ -65,8 +65,9 @@ namespace SnamesAndLaddersShould
             game.MoveToken(valueOfDie);
             game.MoveToken(valueOfSecondDie);
 
+            var expectedSquare = 97;
             game.IsFinished().Should().BeFalse();
-            game.GetTokenPosition().Should().Be(97);
+            game.GetTokenPosition().Should().Be(expectedSquare);
         }
     }
 }
