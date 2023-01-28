@@ -80,7 +80,10 @@ namespace SnamesAndLaddersShould
         [Test]
         public void Start_when_then_player_rolls_a_die()
         {
-            game.MoveToken(1);
+            die.Roll().Returns(4);
+            var valueOfDie = player.RollADie();
+
+            game.MoveToken(valueOfDie);
 
             game.IsStarted().Should().BeTrue();
         }
