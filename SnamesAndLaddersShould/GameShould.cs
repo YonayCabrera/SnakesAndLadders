@@ -21,7 +21,7 @@ namespace SnamesAndLaddersShould
         }
 
         [Test]
-        public void have_token_in_square_4_after_moving_3_spaces_from_square_1()
+        public void Have_token_in_square_4_after_moving_3_spaces_from_square_1()
         {
             var dieValue = 3;
 
@@ -32,7 +32,7 @@ namespace SnamesAndLaddersShould
         }
 
         [Test]
-        public void have_token_in_square_8_after_moving_3_spaces_then_4_spaces_from_square_1()
+        public void Have_token_in_square_8_after_moving_3_spaces_then_4_spaces_from_square_1()
         {
             var dieValue = 3;
             var secondDieValue = 4;
