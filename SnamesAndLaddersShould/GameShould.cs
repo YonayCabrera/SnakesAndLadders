@@ -30,5 +30,15 @@ namespace SnamesAndLaddersShould
             var expectedSquare = 4;
             game.GetTokenPosition().Should().Be(expectedSquare);
         }
+
+        [Test]
+        public void have_token_in_square_8_after_moving_3_spaces_then_4_spaces_from_square_1()
+        {
+            game.MoveToken(3);
+            game.MoveToken(4);
+
+            var expectedSquare = 8;
+            game.GetTokenPosition().Should().Be(expectedSquare);
+        }
     }
 }
