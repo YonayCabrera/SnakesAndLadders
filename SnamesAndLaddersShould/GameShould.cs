@@ -43,5 +43,17 @@ namespace SnamesAndLaddersShould
             var expectedSquare = 8;
             game.GetTokenPosition().Should().Be(expectedSquare);
         }
+
+        [Test]
+        public void End_the_game_when_token_is_in_square_100_after_moving_3_spaces_from_square_97()
+        {
+            var valueOfDie = 96;
+            var valueOfSecondDie = 3;
+
+            game.MoveToken(valueOfDie);
+            game.MoveToken(valueOfSecondDie);
+
+            game.IsFinished().Should().BeTrue();
+        }
     }
 }

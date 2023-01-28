@@ -8,6 +8,11 @@
             return position;
         }
 
+        public bool IsFinished()
+        {
+            return true;
+        }
+
         public int MoveToken(int spaces)
         {
             return position += spaces;
