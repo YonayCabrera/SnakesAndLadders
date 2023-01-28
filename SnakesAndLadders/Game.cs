@@ -13,6 +13,11 @@
             return position == 100;
         }
 
+        public bool IsStarted()
+        {
+            return position > 1;
+        }
+
         public int MoveToken(int spaces)
         {
             if (position + spaces > 100) return position;

@@ -1,5 +1,6 @@
 using SnamesAndLadders;
 using FluentAssertions;
+using System.Numerics;
 
 namespace SnamesAndLaddersShould
 {
@@ -18,6 +19,7 @@ namespace SnamesAndLaddersShould
         {
             var expectedSquare = 1;
             game.GetTokenPosition().Should().Be(expectedSquare);
+            game.IsStarted().Should().BeFalse();
         }
 
         [Test]
@@ -68,6 +70,14 @@ namespace SnamesAndLaddersShould
             var expectedSquare = 97;
             game.IsFinished().Should().BeFalse();
             game.GetTokenPosition().Should().Be(expectedSquare);
+        }
+
+        [Test]
+        public void Start_when_then_player_rolls_a_die()
+        {
+            game.MoveToken(1);
+
+            game.IsStarted().Should().BeTrue();
         }
     }
 }
