@@ -55,5 +55,18 @@ namespace SnamesAndLaddersShould
 
             game.IsFinished().Should().BeTrue();
         }
+
+        [Test]
+        public void Not_end_the_game_when_token_move_4_spaces_from_square_97_and_then_the_token_is_on_97()
+        {
+            var valueOfDie = 96;
+            var valueOfSecondDie = 4;
+
+            game.MoveToken(valueOfDie);
+            game.MoveToken(valueOfSecondDie);
+
+            game.IsFinished().Should().BeFalse();
+            game.GetTokenPosition().Should().Be(97);
+        }
     }
 }

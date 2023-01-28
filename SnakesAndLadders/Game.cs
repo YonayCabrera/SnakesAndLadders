@@ -10,11 +10,12 @@
 
         public bool IsFinished()
         {
-            return true;
+            return position == 100;
         }
 
         public int MoveToken(int spaces)
         {
+            if (position + spaces > 100) return position;
             return position += spaces;
         }
     }
