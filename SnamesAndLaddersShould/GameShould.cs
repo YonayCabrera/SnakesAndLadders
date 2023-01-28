@@ -1,5 +1,6 @@
 using SnamesAndLadders;
 using FluentAssertions;
+using NSubstitute;
 using System.Numerics;
 
 namespace SnamesAndLaddersShould
@@ -78,6 +79,20 @@ namespace SnamesAndLaddersShould
             game.MoveToken(1);
 
             game.IsStarted().Should().BeTrue();
+        }
+
+        [Test]
+        public void Move_4_spaces_when_the_player_rolls_a_4()
+        {
+            var die = Substitute.For<Die>();
+            var player = new Player(die);
+            die.Roll().Returns(4);
+            var valueOfDie = player.RollADie();
+
+            game.MoveToken(valueOfDie);
+
+            var expectedPosition = 5;
+            game.GetTokenPosition().Should().Be(expectedPosition);
         }
     }
 }

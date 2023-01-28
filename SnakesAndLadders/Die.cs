@@ -2,7 +2,7 @@
 {
     public class Die
     {
-        public int Roll()
+        public virtual int Roll()
         {
             return new Random().Next(1, 7);
         }
