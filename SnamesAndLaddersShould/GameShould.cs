@@ -23,7 +23,9 @@ namespace SnamesAndLaddersShould
         [Test]
         public void have_token_in_square_4_after_moving_3_spaces_from_square_1()
         {
-            game.MoveToken(3);
+            var dieValue = 3;
+
+            game.MoveToken(dieValue);
 
             var expectedSquare = 4;
             game.GetTokenPosition().Should().Be(expectedSquare);
