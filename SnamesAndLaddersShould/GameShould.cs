@@ -15,7 +15,7 @@ namespace SnamesAndLaddersShould
         }
 
         [Test]
-        public void Start_when_the_token_is_on_square_1()
+        public void Start_with_the_token_on_square_1()
         {
             var expectedSquare = 1;
             game.GetTokenPosition().Should().Be(expectedSquare);
